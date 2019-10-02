@@ -1,0 +1,12 @@
+kind: Service
+apiVErsion: v1
+metadata:
+  name: gke-demo-1
+spec:
+  selector:
+    run: gke-demo-1
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+  type: LoadBalancer

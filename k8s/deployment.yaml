@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: deployment
+metadata:
+  labels:
+    run: gke-demo-1
+  name: gke-demo-1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: gke-demo-1
+  template:
+    metadata:
+      labels:
+        run: gke-demo-1
+      spec:
+        containers:
+        - image: gcr.io/$PROJECT_ID/gke-demo-1:latest
+          name: gke-demo-1
+          port:
+          - containerPort: 8080
