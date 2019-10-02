@@ -6,8 +6,9 @@ steps:
   id: 'Push'
   args: ["push", "gcr.io/$PROJECT_ID/$REPO_NAME:$REVISION_ID"]
 - name: 'gcr.io/cloud-builders/gke-deploy:stable'
+  id: 'Deploy'
   args:
   - 'run'
   - '--image=gcr.io/$PROJECT_ID/$REPO_NAME:$REVISION_ID'
-  - '--location=europe-north1'
+  - '--location=europe-north1-c'
   - '--cluster=gke-deploy-cluster'
