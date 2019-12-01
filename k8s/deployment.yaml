@@ -17,5 +17,5 @@ spec:
       containers:
       - image: gcr.io/rdvk-gke-test-1/gke-demo-1:latest
         name: gke-demo-1
-        port:
+        ports:
         - containerPort: 8080
