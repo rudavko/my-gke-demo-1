@@ -9,6 +9,7 @@ steps:
   id: 'Deploy'
   args:
   - 'run'
+  - '--filename=k8s'
   - '--image=gcr.io/$PROJECT_ID/$REPO_NAME:$REVISION_ID'
   - '--location=us-central1-c'
   - '--cluster=gke-deploy-cluster'
