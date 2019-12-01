@@ -1,5 +1,5 @@
 kind: Service
-apiVErsion: v1
+apiVersion: v1
 metadata:
   name: gke-demo-1
 spec:
