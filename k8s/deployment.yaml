@@ -18,4 +18,4 @@ spec:
       - name: my-gke-demo-1
         image: gcr.io/rdvk-gke-test-1/my-gke-demo-1:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 80
