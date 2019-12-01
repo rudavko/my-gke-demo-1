@@ -10,5 +10,5 @@ steps:
   args:
   - 'run'
   - '--image=gcr.io/$PROJECT_ID/$REPO_NAME:$REVISION_ID'
-  - '--location=europe-north1-c'
+  - '--location=us-central1-c'
   - '--cluster=gke-deploy-cluster'
