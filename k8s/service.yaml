@@ -1,10 +1,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: gke-demo-1
+  name: my-gke-demo-1
 spec:
   selector:
-    run: gke-demo-1
+    app: my-gke-demo-1
   ports:
   - protocol: TCP
     port: 80
