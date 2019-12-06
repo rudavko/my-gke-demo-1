@@ -5,10 +5,7 @@ steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   id: 'Update manifest'
   entrypoint: /bin/sh
-  args:
-  - '-c'
-  - |
-     sed "s/GOOGLE_CLOUD_PROJECT/${PROJECT_ID}/g" k8s/deployment.yaml 
+  args: ['-c', 'sed "s/GOOGLE_CLOUD_PROJECT/${PROJECT_ID}/g" k8s/deployment.yaml']
 - name: 'gcr.io/cloud-builders/docker'
   id: 'Push'
   args: ["push", "gcr.io/$PROJECT_ID/$REPO_NAME:$REVISION_ID"]
