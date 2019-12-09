@@ -19,3 +19,9 @@ spec:
         image: gcr.io/GOOGLE_CLOUD_PROJECT/my-gke-demo-1:latest
         ports:
         - containerPort: 80
+        env:
+          - name: TEST_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: test-secret
+                key: test-secret
