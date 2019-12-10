@@ -1,6 +1,15 @@
 const http = require('http')
 
 const handler = (request,response)=>{
+  if(response.headers['x-forwarded-proto']==='http'){
+    const url = [
+      'https',
+      request.headers.host,
+      request.url
+    ]
+   response.redirect(301,url.join(''))
+   return
+  }
   const result = [
     'Hey, whats up?',
     process.env.TEST_SECRET,
