@@ -7,7 +7,11 @@ const handler = (request,response)=>{
       request.headers.host,
       request.url
     ]
-   response.redirect(301,url.join(''))
+
+   response.writeHead(301,{
+    'location':url.join('')
+   })
+   response.end()
    return
   }
   const result = [
