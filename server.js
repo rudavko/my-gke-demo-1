@@ -1,18 +1,18 @@
 const http = require('http')
 
 const handler = (request,response)=>{
-  if(request.url!=='/gg' && request.headers['x-forwarded-proto']==='http'){
+  if(equest.headers['x-forwarded-proto']==='http'){
     const url = [
       'https://',
       request.headers.host,
-      '/gg'
+      request.url
     ]
     
-       response.writeHead(302,{
-        'Location': url.join('')
-       })
-       response.end()
-       return
+    response.writeHead(302, {
+    'Location': url.join('')
+    })
+    response.end()
+    return
   }
   const result = [
     'Hey, whats up?',
