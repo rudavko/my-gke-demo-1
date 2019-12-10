@@ -3,7 +3,8 @@ const http = require('http')
 const handler = (request,response)=>{
   const result = [
     'Hey, whats up?',
-    process.env.TEST_SECRET
+    process.env.TEST_SECRET,
+    JSON.stringify(request.headers,null,4)
   ]
   response.write(result.join(' '))
   response.end()
