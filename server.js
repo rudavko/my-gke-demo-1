@@ -9,7 +9,7 @@ const handler = (request,response)=>{
     ]
 
    response.writeHead(301,{
-    'location':url.join('')
+    'Location': url.join('')
    })
    response.end()
    return
