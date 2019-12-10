@@ -1,18 +1,18 @@
 const http = require('http')
 
 const handler = (request,response)=>{
-  const url = [
-    'https://',
-    request.headers.host,
-    request.url
-  ]
   if(request.headers['x-forwarded-proto']==='http'){
-
-  //  response.writeHead(301,{
-  //   'Location': url.join('')
-  //  })
-  //  response.end()
-  //  return
+    const url = [
+      'https://',
+      request.headers.host,
+      request.url
+    ]
+    
+       response.writeHead(301,{
+        'Location': url.join('')
+       })
+       response.end()
+       return
   }
   const result = [
     'Hey, whats up?',
