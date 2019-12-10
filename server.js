@@ -1,14 +1,14 @@
 const http = require('http')
 
 const handler = (request,response)=>{
-  if(request.headers['x-forwarded-proto']==='http'){
+  if(request.url!=='/gg' && request.headers['x-forwarded-proto']==='http'){
     const url = [
       'https://',
       request.headers.host,
-      request.url
+      '/gg'
     ]
     
-       response.writeHead(301,{
+       response.writeHead(302,{
         'Location': url.join('')
        })
        response.end()
@@ -17,9 +17,9 @@ const handler = (request,response)=>{
   const result = [
     'Hey, whats up?',
     process.env.TEST_SECRET,
-    JSON.stringify(request.url,null,4),
+    JSON.stringify(Object.keys(request),null,4),
     JSON.stringify(request.headers,null,4),
-    url.join('')
+    JSON.stringify(request.url,null,4)
   ]
   response.write(result.join(' '))
   response.end()
