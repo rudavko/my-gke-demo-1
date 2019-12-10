@@ -1,7 +1,7 @@
 const http = require('http')
 
 const handler = (request,response)=>{
-  if(equest.headers['x-forwarded-proto']==='http'){
+  if(request.headers['x-forwarded-proto']==='http'){
     const url = [
       'https://',
       request.headers.host,
