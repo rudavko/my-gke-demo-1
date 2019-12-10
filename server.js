@@ -1,7 +1,11 @@
 const http = require('http')
 
 const handler = (request,response)=>{
-  response.write('Hey, whats up?'+process.env.TEST_SECRET)
+  const result = []
+  result.push('Hey, whats up?')
+  result.push(process.env.TEST_SECRET)
+  result.push(JSON.stringify(request,null,4))
+  response.write(result.join(' '))
   response.end()
 }
 
